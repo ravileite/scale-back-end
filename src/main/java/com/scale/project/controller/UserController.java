@@ -22,6 +22,14 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+	/**
+	 * Return 6 users per page sorted by id
+	 * 
+	 * @param per_page
+	 * @param page
+	 * @param sortBy
+	 * @return ResponseEntity<List<User>>
+	 */
 	@GetMapping("users")
 	public ResponseEntity<List<User>> getUsers(@RequestParam(defaultValue = "0") Integer page,
 			@RequestParam(defaultValue = "6") Integer per_page, @RequestParam(defaultValue = "id") String sortBy) {

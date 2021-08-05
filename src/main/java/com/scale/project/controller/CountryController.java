@@ -26,6 +26,11 @@ public class CountryController {
 	@Autowired
 	private CountryService countryService;
 	
+	/**
+	 * Return all countries, your codes and borders in descending order by borders number
+	 * 
+	 * @return ResponseEntity<List<CountryDTO>>
+	 */
 	@GetMapping("countries")
 	public ResponseEntity<List<CountryDTO>> getCountries(){
 		List<Country> countries = countryService.getCountries();
