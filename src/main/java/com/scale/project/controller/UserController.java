@@ -25,8 +25,8 @@ public class UserController {
 	@GetMapping("users")
 	public ResponseEntity<List<User>> getUsers(@RequestParam(defaultValue = "0") Integer page,
 			@RequestParam(defaultValue = "6") Integer per_page, @RequestParam(defaultValue = "id") String sortBy) {
-		List<User> list = userService.getUsers(page, per_page, sortBy);
+		List<User> users = userService.getUsers(page, per_page, sortBy);
 
-		return new ResponseEntity<List<User>>(list, HttpStatus.OK);
+		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 	}
 }

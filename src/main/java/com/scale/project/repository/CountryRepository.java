@@ -3,9 +3,9 @@ package com.scale.project.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.scale.project.model.User;
+import com.scale.project.model.Country;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long>{
-	
+public interface CountryRepository extends JpaRepository<Country, Long>{
+
 }

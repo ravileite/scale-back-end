@@ -1,6 +1,5 @@
 package com.scale.project.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,18 +16,14 @@ import com.scale.project.repository.UserRepository;
 public class UserService {
 		
 	@Autowired
-	UserRepository repository;
+	UserRepository userRepository;
 	
 	public List<User> getUsers(Integer page, Integer per_page, String sortBy)
     {
         Pageable paging = PageRequest.of(page, per_page, Sort.by(sortBy));
  
-        Page<User> pagedResult = repository.findAll(paging);
+        Page<User> pagedResult = userRepository.findAll(paging);
 
-        if(pagedResult.hasContent()) {
-            return pagedResult.getContent();
-        } else {
-            return new ArrayList<User>();
-        }
+        return pagedResult.getContent();
     }
 }
